@@ -1,3 +1,5 @@
+package MVCModel;
+
 public class Cell {
 
     private boolean isAlive;
@@ -19,7 +21,6 @@ public class Cell {
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
-
 
     public int getxCoordinate() {
         return xCoordinate;

@@ -1,3 +1,5 @@
+package MVCModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class Grid {
         int xCoordinate = cell.getxCoordinate();
         int yCoordinate = cell.getyCoordinate();
 
-        // regular Cell inside grid
+        // regular MVCModel.Cell inside grid
         if (!isAtBoundary(cell)) {
             surroundings.add(grid[yCoordinate + 1][xCoordinate - 1]);
             surroundings.add(grid[yCoordinate + 1][xCoordinate]);
@@ -29,28 +31,28 @@ public class Grid {
             surroundings.add(grid[yCoordinate - 1][xCoordinate]);
             surroundings.add(grid[yCoordinate - 1][xCoordinate + 1]);
         } else if (isOnCorner(cell)) {
-            // upper left Cell
+            // upper left MVCModel.Cell
             if (xCoordinate == 0 && yCoordinate == 0) {
                 surroundings.add(grid[yCoordinate + 1][xCoordinate]);
                 surroundings.add(grid[yCoordinate + 1][xCoordinate + 1]);
                 surroundings.add(grid[yCoordinate][xCoordinate + 1]);
-                // lower left Cell
+                // lower left MVCModel.Cell
             } else if (xCoordinate == 0 && yCoordinate == (height - 1)) {
                 surroundings.add(grid[yCoordinate][xCoordinate + 1]);
                 surroundings.add(grid[yCoordinate - 1][xCoordinate]);
                 surroundings.add(grid[yCoordinate - 1][xCoordinate + 1]);
-                // upper right Cell
+                // upper right MVCModel.Cell
             } else if (xCoordinate == (width - 1) && yCoordinate == 0) {
                 surroundings.add(grid[yCoordinate + 1][xCoordinate]);
                 surroundings.add(grid[yCoordinate][xCoordinate - 1]);
                 surroundings.add(grid[yCoordinate + 1][xCoordinate - 1]);
-                // lower right Cell
+                // lower right MVCModel.Cell
             } else {
                 surroundings.add(grid[yCoordinate - 1][xCoordinate]);
                 surroundings.add(grid[yCoordinate - 1][xCoordinate - 1]);
                 surroundings.add(grid[yCoordinate][xCoordinate - 1]);
             }
-            // boundary Cell
+            // boundary MVCModel.Cell
         } else if (isAtBoundary(cell)) {
             // left boundary
             if (xCoordinate == 0) {
@@ -88,6 +90,7 @@ public class Grid {
         }
         return surroundings;
     }
+
 
     public boolean isAtBoundary(Cell cell) {
         if (cell.getxCoordinate() == 0 || cell.getxCoordinate() == (width - 1) || cell.getyCoordinate() == 0 || cell.getyCoordinate() == (height - 1)) {

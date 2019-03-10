@@ -19,7 +19,7 @@ public class GameOfLife extends JPanel {
     private void setupGrid() {
         for (int[] row : grid) {
             for (int j = 0; j < row.length; j++) {
-                if (rnd.nextDouble() < 0.85)
+                if (rnd.nextDouble() < 0.89)
                     continue;
                 row[j] = rnd.nextInt(2);
             }
@@ -102,7 +102,7 @@ public class GameOfLife extends JPanel {
     }
 
     public static void main(String[] args) {
-        final GameOfLife c = new GameOfLife(500, 500);
+        final GameOfLife c = new GameOfLife(250, 250);
         JFrame frame = new JFrame();
         frame.getContentPane().add(c);
         frame.pack();
